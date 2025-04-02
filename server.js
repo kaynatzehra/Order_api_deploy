@@ -6,6 +6,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+    res.send("Welcome to the Order Management API");
+  });
+
 // Import Routes
 const orderRoutes = require("./routes/orderRoutes");
 app.use("/api/orders", orderRoutes);
